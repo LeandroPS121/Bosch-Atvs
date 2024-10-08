@@ -12,40 +12,26 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String escolha = "";
 
+        // ================== Menu Principal
         while (!escolha.equals("1") && !escolha.equals("2")) {
-            // Limpa a tela
-            for (int i = 0; i < 25; i++) {
-                System.out.println("");
-            }
+            //Limpar tela
+            Recursos.limpaTela();
 
-            System.out.println(" ________________ Menu ________________ ");
-            System.out.println("|                                      |");
-            System.out.println("|      Selecione uma opcao abaixo      |");
-            System.out.println("|______________________________________|");
-            System.out.println("|                                      |");
-            System.out.println("|           [1] - CRUD cliente         |");
-            System.out.println("|           [2] - CRUD  estado         |");
-            System.out.println("|______________________________________|");
+            //Menu principal
+            Recursos.gerarMenu(1);
             escolha = scanner.nextLine();
         }
 
         if (escolha.equals("1")) {
+            // ================== Cliente
             ClienteDAO clienteDAO = new ClienteDAO();
             String clienteEscolha = "";
 
             while (!clienteEscolha.equals("1") && !clienteEscolha.equals("2") && !clienteEscolha.equals("3") && !clienteEscolha.equals("4")) {
-                //Limpa a tela
-                for (int i = 0; i < 25; i++) {
-                    System.out.println("");
-                }
+                //Limpar tela
+                Recursos.limpaTela();
 
-                System.out.println(" ________________ Menu Cliente ________________ ");
-                System.out.println("|                                              |");
-                System.out.println("|           [1] - Adicionar Cliente            |");
-                System.out.println("|           [2] - Listar    Clientes           |");
-                System.out.println("|           [3] - Atualizar Cliente            |");
-                System.out.println("|           [4] - Deletar   Cliente            |");
-                System.out.println("|______________________________________________|");
+                //Menu cliente
                 clienteEscolha = scanner.nextLine();
             }
 
@@ -88,22 +74,16 @@ public class Main {
                     break;
             }
         } else if (escolha.equals("2")) {
+            // ================== Estado
             EstadoDAO estadoDAO = new EstadoDAO();
             String estadoEscolha = "";
 
             while (!estadoEscolha.equals("1") && !estadoEscolha.equals("2") && !estadoEscolha.equals("3") && !estadoEscolha.equals("4")) {
-                //Limpa a tela
-                for (int i = 0; i < 25; i++) {
-                    System.out.println("");
-                }
+                //Limpar tela
+                Recursos.limpaTela();
 
-                System.out.println(" ________________ Menu Estado ________________ ");
-                System.out.println("|                                             |");
-                System.out.println("|           [1] - Adicionar Estado            |");
-                System.out.println("|           [2] - Listar    Estados           |");
-                System.out.println("|           [3] - Atualizar Estado            |");
-                System.out.println("|           [4] - Deletar   Estado            |");
-                System.out.println("|_____________________________________________|");
+                //Menu estado
+                Recursos.gerarMenu(3);
                 estadoEscolha = scanner.nextLine();
             }
 
