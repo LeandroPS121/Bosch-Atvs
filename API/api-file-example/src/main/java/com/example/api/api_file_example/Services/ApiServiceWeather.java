@@ -28,7 +28,7 @@ public class ApiServiceWeather {
         String url = String.format("https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&hourly=temperature", latitude, longitude);
 
         SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
-        Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("proxy.br.bosch.com", 8080));
+        Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("proxy.br.bosch.com", 8081));
         factory.setProxy(proxy);
 
         System.out.println(latitude+" Teste "+ longitude);
